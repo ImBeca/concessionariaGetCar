@@ -1,116 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void compraVista(){
-	
-	int saida = 0;
-	do{
-		
-		printf("-------------------\n");
-		printf(" COMPRA A VISTA \n");
-		printf("-------------------\n");
-		
-		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
-		scanf("%d",&saida);
-		
-	}while(saida==0);
-	
-}	
-	
-void compraPrazo(){
-	
-	int saida = 0;
-	do{
-		
-		printf("----------------\n");
-		printf(" COMPRA A PRAZO \n");
-		printf("----------------\n");
-		
-		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
-		scanf("%d",&saida);
-		
-	}while(saida==0);
-	
-	
-}
-
-void financQuitacao(){
-	
-	int saida = 0;
-	do{
-		
-		printf("---------------------------\n");
-		printf(" QUITACAO DO FINANCIAMENTO \n");
-		printf("---------------------------\n");
-		
-		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
-		scanf("%d",&saida);
-		
-	}while(saida==0);
-	
-	
-}
-
-void financAntecipParcelas(){
-	
-	int saida = 0;
-	do{
-		
-		printf("-------------------------\n");
-		printf(" ANTECIPACAO DE PARCELAS \n");
-		printf("-------------------------\n");
-		
-		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
-		scanf("%d",&saida);
-		
-	}while(saida==0);
-	
-	
-}
-
-void inad(){
-	
-	int saida = 0;
-	do{
-		
-		printf("---------------\n");
-		printf(" INADIMPLENCIA \n");
-		printf("---------------\n");
-		
-		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
-		scanf("%d",&saida);
-		
-	}while(saida==0);
-	
-	
-}
-
-void outrasSit(){
-	
-	int saida = 0;
-	do{
-		
-		printf("-----------------------------------------------------------\n");
-		printf(" AVALIACAO DO VEICULO / EMPLACAMENTO / ACESSORIOS / SEGURO \n");
-		printf("-----------------------------------------------------------\n");
-		
-		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
-		scanf("%d",&saida);
-		
-	}while(saida==0);
-	
-	
-}
-
-int main(){
-	
+void telaPrincipal(){
 	
 	
 	printf("-----------------------------------------\n");
 	printf("  GETCAR - Sua concessionaria PREFERIDA\n");
 	printf("-----------------------------------------\n\n\n");
 	
-		int n;
+		int n=0;
 		printf("Informe a opcao desejada abaixo: \n");
 		printf("---------------------------------------------\n");
 		printf("1 - COMPRA a Vista: \n");
@@ -122,7 +20,8 @@ int main(){
 		printf("7 - Sair \n");
 		printf("---------------------------------------------\n");
 		scanf("%d",&n);
-	
+		
+							
 	switch(n){
 		
 		case 1:
@@ -141,14 +40,133 @@ int main(){
 			
 			break;
 		case 6:
-			
-			break;
-		case 7:
 			system("cls");
 			outrasSit();
 			break;
-			
+		case 7:
+			printf("Saida executada ...");
+			break;
+		
 	}
 	
 	
+}
+
+void compraVista(){
+	
+	int saida = 0;
+	do{
+		
+		printf("-------------------\n");
+		printf(" COMPRA A VISTA \n");
+		printf("-------------------\n");
+		
+		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
+		scanf("%d",&saida);
+		
+		
+	}while(saida==0);
+	
+}	
+	
+void compraPrazo(){
+	
+	int saida = 0;
+	do{
+		
+		printf("----------------\n");
+		printf(" COMPRA A PRAZO \n");
+		printf("----------------\n");
+		
+		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
+		scanf("%d",&saida);
+		
+		
+	}while(saida==0);
+	
+	
+}
+
+void financQuitacao(){
+	
+	int saida = 0;
+	do{
+		
+		printf("---------------------------\n");
+		printf(" QUITACAO DO FINANCIAMENTO \n");
+		printf("---------------------------\n");
+		
+		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
+		scanf("%d",&saida);
+		
+		
+	}while(saida==0);
+	
+	
+}
+
+void financAntecipParcelas(){
+	
+	int saida = 0;
+	do{
+		
+		printf("-------------------------\n");
+		printf(" ANTECIPACAO DE PARCELAS \n");
+		printf("-------------------------\n");
+		
+		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
+		scanf("%d",&saida);
+		
+			
+	}while(saida==0);
+	
+	
+}
+
+void inadimp(){
+	
+	int saida = 0;
+	do{
+		
+		printf("---------------\n");
+		printf(" INADIMPLENCIA \n");
+		printf("---------------\n");
+		
+		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
+		scanf("%d",&saida);
+		
+				
+	}while(saida==0);
+	
+	
+}
+
+void outrasSit(){
+	
+	int saida = 0;
+	float emplac, acess, avalVeic;
+	
+	do{
+		
+		printf("--------------------------------------------------\n");
+		printf(" AVALIACAO DO VEICULO / EMPLACAMENTO / ACESSORIOS \n");
+		printf("--------------------------------------------------\n");
+		
+		
+				
+		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
+		scanf("%d",&saida);
+	
+		
+	}while(saida==0);
+	
+	
+	system("cls");
+	telaPrincipal();
+}
+
+int main(){
+	
+	telaPrincipal();
+		
 }
