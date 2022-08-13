@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void financAntecipParcelas();
+
 void telaPrincipal(){
-	
-	
+
+
 	printf("-----------------------------------------\n");
 	printf("  GETCAR - Sua concessionaria PREFERIDA\n");
 	printf("-----------------------------------------\n\n\n");
-	
+
 		int n=0;
 		printf("Informe a opcao desejada abaixo: \n");
 		printf("---------------------------------------------\n");
@@ -20,153 +22,204 @@ void telaPrincipal(){
 		printf("7 - Sair \n");
 		printf("---------------------------------------------\n");
 		scanf("%d",&n);
-		
-							
+
+
 	switch(n){
-		
+
 		case 1:
 
 			break;
 		case 2:
-			
+
 			break;
 		case 3:
-			
+
 			break;
 		case 4:
-			
+			financAntecipParcelas();
 			break;
 		case 5:
-			
+
 			break;
 		case 6:
 			system("cls");
-			outrasSit();
+			//outrasSit();
 			break;
 		case 7:
 			printf("Saida executada ...");
 			break;
-		
+
 	}
-	
-	
+
+
 }
 
 void compraVista(){
-	
+
 	int saida = 0;
 	do{
-		
+
 		printf("-------------------\n");
 		printf(" COMPRA A VISTA \n");
 		printf("-------------------\n");
-		
+
 		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
 		scanf("%d",&saida);
-		
-		
+
+
 	}while(saida==0);
-	
+
 }	
-	
+
 void compraPrazo(){
-	
+
 	int saida = 0;
 	do{
-		
+
 		printf("----------------\n");
 		printf(" COMPRA A PRAZO \n");
 		printf("----------------\n");
-		
+
 		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
 		scanf("%d",&saida);
-		
-		
+
+
 	}while(saida==0);
-	
-	
+
+
 }
 
 void financQuitacao(){
-	
+
 	int saida = 0;
 	do{
-		
+
 		printf("---------------------------\n");
 		printf(" QUITACAO DO FINANCIAMENTO \n");
 		printf("---------------------------\n");
-		
+
 		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
 		scanf("%d",&saida);
-		
-		
+
+
 	}while(saida==0);
-	
-	
+
+
 }
 
 void financAntecipParcelas(){
-	
+
 	int saida = 0;
 	do{
+		/*
+		JUROS SIMPLES
+		J = C . i . t
 		
+		M = C + J
+		
+			J: juros
+			C: capital inicial
+			i: taxa
+			t: tempo
+			M: montante
+		*/
+		int valorParcela, qtdParcela;
+		int montante, capitalInicial;
+		int qtdAdiantar, novaParcela, pagamento, valorAmortizado;
 		printf("-------------------------\n");
 		printf(" ANTECIPACAO DE PARCELAS \n");
 		printf("-------------------------\n");
+		printf("Valor da parcela:\nR$");
+		scanf("%d",&valorParcela);
+		printf("Quantidade de parcelas:\n");
+		scanf("%d",&qtdParcela);
+		montante = valorParcela * qtdParcela; //valor do veiculo com juros de 1,8% ao mes
+		capitalInicial = montante/(1+((0.018)*qtdParcela)); //valor do veiculo sem juros
+		printf("Quantas parcelas deseja adiantar?\n");
+		scanf("%d",&qtdAdiantar);
+		novaParcela = capitalInicial/qtdParcela;
+		pagamento = novaParcela * qtdAdiantar;
+		valorAmortizado = montante - (capitalInicial * (0.018) * (qtdParcela-qtdAdiantar)); //novo valor do veiculo
+		printf("Valor da antecipacao das parcelas: %d\n",pagamento);
+		printf("Antigo valor do veiculo: %d\n",montante);
+		printf("Novo valor do veiculo: %d\n",valorAmortizado);
+		printf("Desconto: %d\n",(montante-valorAmortizado));
+		printf("Proximas parcelas: %d x R$%d\n\n",(qtdParcela-qtdAdiantar),valorParcela);
 		
+
 		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
 		scanf("%d",&saida);
-		
-			
+
+
 	}while(saida==0);
-	
-	
+
+
 }
 
 void inadimp(){
-	
+
 	int saida = 0;
 	do{
-		
+
 		printf("---------------\n");
 		printf(" INADIMPLENCIA \n");
 		printf("---------------\n");
-		
+
 		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
 		scanf("%d",&saida);
-		
-				
+
+
 	}while(saida==0);
-	
-	
+
+
 }
 
-void outrasSit(){
-	
-	int saida = 0;
-	float emplac, acess, avalVeic;
-	
-	do{
-		
-		printf("--------------------------------------------------\n");
-		printf(" AVALIACAO DO VEICULO / EMPLACAMENTO / ACESSORIOS \n");
-		printf("--------------------------------------------------\n");
-		
-		
-				
-		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
-		scanf("%d",&saida);
-	
-		
-	}while(saida==0);
-	
-	
+int outrasSit(){
+
+	int n=3;
+	float emplac=0,avalVeic=0,vlrVeic=0;
+
+
+		printf("----------------------------------------\n");
+		printf(" AVALIACAO DO VEICULO / EMPLACAMENTO \n");
+		printf("----------------------------------------\n");
+
+		do{
+
+			printf("Informe a opcao desejada: \n");
+			printf("1 - Avaliacao do usado \n");
+			printf("2 - Calculo do emplacamento do veiculo \n");
+			printf("3 - Sair sem alteracoes \n");
+			printf("-------------------------------------- \n");
+			scanf("%d",&n);
+
+			if(n==1){
+
+				printf("Informe o valor do veiculo USADO: ");
+				scanf("%f",&avalVeic);
+
+				return avalVeic;
+
+			}else if(n==2){
+
+				printf("Informe o valor do veiculo para calculo do IPVA: ");
+				scanf("%f",&vlrVeic);
+
+				emplac=(vlrVeic*2.5)+151.22;
+
+				return emplac;
+
+			}
+
+		}while(n!=3);
+
+
 	system("cls");
 	telaPrincipal();
 }
 
 int main(){
-	
+
 	telaPrincipal();
-		
+
 }
