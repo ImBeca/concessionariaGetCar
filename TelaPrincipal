@@ -139,7 +139,7 @@ void financAntecipParcelas(){
 		scanf("%d",&qtdAdiantar);
 		novaParcela = capitalInicial/qtdParcela;
 		pagamento = novaParcela * qtdAdiantar;
-		valorAmortizado = montante - (capitalInicial * (0.018) * (qtdParcela-qtdAdiantar)); //novo valor do veiculo
+		valorAmortizado = montante - qtdAdiantar*(valorParcela-novaParcela); //novo valor do veiculo
 		printf("Valor da antecipacao das parcelas: %d\n",pagamento);
 		printf("Antigo valor do veiculo: %d\n",montante);
 		printf("Novo valor do veiculo: %d\n",valorAmortizado);
