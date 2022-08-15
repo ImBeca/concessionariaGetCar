@@ -33,7 +33,7 @@ void telaPrincipal(){
 
 			break;
 		case 3:
-
+		        financQuitacao();
 			break;
 		case 4:
 			financAntecipParcelas();
@@ -97,6 +97,21 @@ void financQuitacao(){
 		printf("---------------------------\n");
 		printf(" QUITACAO DO FINANCIAMENTO \n");
 		printf("---------------------------\n");
+		int qntParcelas, valorParcelas,restParcelas;
+   		int total;
+  
+   		 printf("\nQuantidade de parcelas:  ");
+   		 scanf("%d", &qntParcelas);
+   		 printf("\nValor da parcela:  ");
+   		 scanf("%d", &valorParcelas);
+   		 printf("\nParcelas restantes:  ");
+    		 scanf("%d", &restParcelas);
+    
+    		total = (restParcelas * valorParcelas);
+    
+   		 printf("Você ainda deve %d", total);
+    
+    
 
 		printf("Informe se deseja sair: [1-Sim ou 0-Nao]: ");
 		scanf("%d",&saida);
